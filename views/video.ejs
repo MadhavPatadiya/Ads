@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>reels</h1>
+    <hr/>
+    <% if (video.length > 0) { %>
+        <% video.forEach((videoItem) => { %>
+            <div>
+                <h2><%= videoItem.name %></h2>
+                <video controls>
+                    <% if (videoItem.video && videoItem.video.data) { %>
+                        <source src="data:<%= videoItem.video.contentType %>;base64,<%= videoItem.video.data.toString('base64') %>">
+                    <% } else { %>
+                        <p>No video data available</p>
+                    <% } %>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h2>no videos</h2>
+    <% } %>
+</body>
+</html>
