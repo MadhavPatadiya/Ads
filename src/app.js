@@ -10,17 +10,24 @@ const app = express();
 const PORT = 6001;
 app.use(express.json());
 app.use(express.static('public'));
-  app.use(express.urlencoded({ extended: false }));
-  app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs');
 
 // Configure multer for file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-mongoose.connect('mongodb+srv://vishalfuerte978:fGCW5IKQ8EDMm7ny@cluster0.kzf1h0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true
-})
+mongoose.connect(
+
+  "mongodb://15.206.62.195:27017/ads",
+
+  // 'mongodb+srv://vishalfuerte978:fGCW5IKQ8EDMm7ny@cluster0.kzf1h0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+
+
+  {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true
+  })
   .then(async () => {
     console.log('Connection successful');
     // add your routes here
