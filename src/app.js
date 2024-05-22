@@ -19,7 +19,7 @@ const upload = multer({ storage: storage });
 
 mongoose.connect(
 
-  "mongodb://15.206.62.195:27017/ads",
+  "mongodb://15.206.62.195:27017/Ads",
 
   // 'mongodb+srv://vishalfuerte978:fGCW5IKQ8EDMm7ny@cluster0.kzf1h0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
 
